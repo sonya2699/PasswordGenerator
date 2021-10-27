@@ -50,4 +50,4 @@ function getRandomSymbol(){
   console.log(getRandomSymbol()); // Random symbol from the "symbols" string
   
   
-  // COMMIT AFTER GENERATORS
+  
