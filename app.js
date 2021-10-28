@@ -135,3 +135,20 @@ function generatePassword(lower, upper, number, symbol, length){
   // NOTE: Using the starting value for when the page first loads
   generatePassword(true, true, true, true, 10)
 
+// Event listener for when the "Generate Password" button is clicked
+generateEl.addEventListener(`click`, () => {
+    // Checking if the following options/checkboxes are selected/checked and setting the true or false values to the respective variables
+    const hasLower = lowercaseEl.checked;
+    const hasUpper = uppercaseEl.checked;
+    const hasNumber = numbersEl.checked;
+    const hasSymbol = symbolsEl.checked;
+    
+    // Accessing the value for the number input and changing the value from a string to a number
+    // NOTE: The value returned from a number input is a string value
+    const length = parseInt(lengthEl.value);
+  
+    console.log(hasLower, hasUpper, hasNumber, hasSymbol, length);
+    // The generatePassword function takes the true/false values determined by the checkboxes as well as the number from the number input as arguments and returns a string (AKA The Password) which is set as the innerText value for the "result" (AKA Span) element
+  resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  });
+  
